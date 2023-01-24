@@ -27,6 +27,9 @@ public class ClientService {
     public Client getClientById(Integer id){
         return repository.findById(id).get();
     }
+    public void editClientById(Client client,Integer id){
+        repository.findById(id);
+    }
     public void deleteClient (Integer id){
         repository.deleteById(id);
     }

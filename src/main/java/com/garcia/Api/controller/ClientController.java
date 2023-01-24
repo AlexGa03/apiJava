@@ -53,18 +53,30 @@ public class ClientController {
     public ResponseEntity<?> editClient(@RequestBody Client client, @PathVariable Integer id) {
         try {
             Client clientExists = clientService.getClientById(id);
-            clientExists.setFirst_name(client.getFirst_name());
-            clientExists.setLast_name(client.getLast_name());
-            clientExists.setEmail(client.getEmail());
-            clientExists.setCountry(client.getCountry());
-            clientExists.setIp_address(client.getIp_address());
+            if (client.getFirst_name() != null) {
+                clientExists.setFirst_name(client.getFirst_name());
+            }
+            if (client.getLast_name() != null) {
+                clientExists.setLast_name(client.getLast_name());
+            }
+            if (client.getEmail() != null) {
+                clientExists.setEmail(client.getEmail());
+            }
+            if (client.getCountry() != null) {
+                clientExists.setCountry(client.getCountry());
+            }
+            if (client.getIp_address() != null) {
+                clientExists.setIp_address(client.getIp_address());
+            }
+            clientService.saveClients(clientExists);
             return new ResponseEntity<Client>(client, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<Client>(HttpStatus.NOT_FOUND);
         }
     }
+
     @DeleteMapping("/Client/{id}")
-    public void deleteClient(@PathVariable Integer id){
+    public void deleteClient(@PathVariable Integer id) {
         clientService.deleteClient(id);
     }
 }
