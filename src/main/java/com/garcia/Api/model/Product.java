@@ -15,20 +15,12 @@ import lombok.NoArgsConstructor;
  */
 @Entity
 @Data @NoArgsConstructor @AllArgsConstructor
-@Table (name = "product")
+
 public class Product {
-    public Integer getId() {
-        return Id;
-    }
     @Id 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  
     private Integer Id;
-    
-    @Column(name = "product")
     private String product;
-    
-     @Column(name = "price")
     private double price;
     
 }
