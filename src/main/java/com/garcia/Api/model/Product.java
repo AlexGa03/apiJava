@@ -4,9 +4,7 @@
  */
 package com.garcia.Api.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,11 +15,20 @@ import lombok.NoArgsConstructor;
  */
 @Entity
 @Data @NoArgsConstructor @AllArgsConstructor
+@Table (name = "product")
 public class Product {
-    @Id @GeneratedValue
-    private Integer id;
+    public Integer getId() {
+        return Id;
+    }
+    @Id 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id")
+    private Integer Id;
     
+    @Column(name = "product")
     private String product;
+    
+     @Column(name = "price")
     private double price;
     
 }
