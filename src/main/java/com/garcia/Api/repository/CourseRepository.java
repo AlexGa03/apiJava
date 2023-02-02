@@ -4,13 +4,13 @@
  */
 package com.garcia.Api.repository;
 
-import com.garcia.Api.model.Product;
+import com.garcia.Api.model.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author alexgaralv
  */
-public interface ProductRepository extends JpaRepository<Product, Integer> {
+public interface CourseRepository extends JpaRepository<Course, Integer> {
     
 }

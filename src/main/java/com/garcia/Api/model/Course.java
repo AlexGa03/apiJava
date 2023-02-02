@@ -16,11 +16,18 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data @NoArgsConstructor @AllArgsConstructor
 
-public class Product {
+public class Course {
     @Id 
-    @GeneratedValue  
-    private Integer Id;
-    private String product;
+    @GeneratedValue (strategy = GenerationType.IDENTITY)  
+    private Integer id;
+    private String cname;
+    private String codeC;
     private double price;
+    private String category;
+    private boolean isActive;
+    private String img_url;
+    private String description;
+
+    
     
 }
