@@ -66,7 +66,7 @@ public class CourseController {
             if (course.getCategory() != null) {
                 courseExists.setCategory(course.getCategory());
             }
-            courseExists.setActive(course.isActive());
+            courseExists.setIs_active(course.isIs_active());
             
             if (course.getImg_url() != null) {
                 courseExists.setImg_url(course.getImg_url());
