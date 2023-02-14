@@ -3,31 +3,31 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.garcia.Api.service;
-import com.garcia.Api.model.Product;
+import com.garcia.Api.model.Course;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.garcia.Api.repository.ProductRepository;
+import com.garcia.Api.repository.CourseRepository;
 /**
  *
  * @author alexgaralv
  */
 @Service
-public class ProductService {
+public class CourseService {
     @Autowired
-    private ProductRepository Prepository;
+    private CourseRepository Prepository;
     
-    public List<Product>listProducts(){
+    public List<Course>listCourses(){
         return Prepository.findAll();
     
     }
-    public void saveProduct(Product product){
-        Prepository.save(product);
+    public void saveCourse(Course course){
+        Prepository.save(course);
     }
-    public Product getProductById(Integer id){
+    public Course getCourseById(Integer id){
         return Prepository.findById(id).get();
     }
-    public void deleteProduct (Integer id){
+    public void deleteCourse (Integer id){
         Prepository.deleteById(id);
     }
     
