@@ -60,6 +60,9 @@ public class ProductController {
             if (product.getPrice() != 0) {
                 productExists.setPrice(product.getPrice());
             }
+            if (product.getCategory_id() != null) {
+                productExists.setCategory_id(product.getCategory_id());
+            }
             
             productService.saveProduct(productExists);
             return new ResponseEntity<Product>(product, HttpStatus.OK);

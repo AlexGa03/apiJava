@@ -4,6 +4,7 @@
  */
 package com.garcia.Api.model;
 
+import javax.persistence.Entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import lombok.AllArgsConstructor;
@@ -20,17 +21,9 @@ import org.hibernate.annotations.OnDeleteAction;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
-public class Product {
-
+public class Category {
     @Id
     @GeneratedValue
     private Integer Id;
-    private String product;
-    private double price;
-    @ManyToOne
-    @JoinColumn(name = "category_id")
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private Category category_id;
-
+    private String category;
 }
