@@ -33,4 +33,5 @@ public class Product {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Category category_id;
 
+
 }
